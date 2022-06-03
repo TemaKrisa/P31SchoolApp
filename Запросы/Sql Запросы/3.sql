@@ -1,0 +1,1 @@
+Select Surname[Фамилия], [Name][Имя], Midname[Отчество] From Pupil Where ClassID = 1 Or Not ClassID = 2 And ClassID = 3

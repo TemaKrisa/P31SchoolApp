@@ -1,0 +1,1 @@
+Select Sum(Grade) / Count(*) as '—р балл'  From Grade

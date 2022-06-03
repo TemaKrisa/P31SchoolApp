@@ -1,0 +1,1 @@
+Select Surname[Фамилия], [Name][Имя], Midname[Отчество], Grade*2[Оценкаф] From Grade g join Pupil p on p.PupilID = g.PupilID

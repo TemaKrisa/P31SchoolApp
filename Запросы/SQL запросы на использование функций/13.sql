@@ -1,0 +1,1 @@
+Delete From Class Where ClassName = '4Ç'

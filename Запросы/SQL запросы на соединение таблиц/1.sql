@@ -1,0 +1,1 @@
+Select Surname[Фамилия], [Name][Имя], Midname[Отчество], ClassName[Класс] From Pupil,Class

@@ -1,0 +1,1 @@
+Select Count(*) From Pupil Having Count(*) > 5

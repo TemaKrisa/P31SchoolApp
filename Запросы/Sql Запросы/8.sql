@@ -1,0 +1,1 @@
+Select CONCAT(Surname, ' ', [Name], ' ', Midname)[ิศฮ] From Pupil Where Midname Is Null

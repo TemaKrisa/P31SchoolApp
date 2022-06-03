@@ -1,0 +1,1 @@
+Select DayOfTheWeek[День недели], ClassName[Класс], SubjectName[Предмет], Concat(T.Surname, ' ', t.[Name], ' ', t.MidName)[Преподаватель]   From Schedule s Join Class c on c.ClassID = s.ClassID join Teacher t on t.TeacherID = s.TeacherID join Subject sub on sub.SubjectID = s.SubjectID

@@ -1,0 +1,1 @@
+Select DayOfTheWeek[День недели], LessonNumber[Предмет],Concat(T.Surname, ' ', t.[Name], ' ', t.MidName)[Преподаватель]  From Schedule s join Teacher t on s.TeacherID = t.TeacherID Join Classroom cs on cs.ClassroomID = s.ClassroomID where s.TeacherID != cs.TeacherID Order by DayOfTheWeek

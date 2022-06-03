@@ -1,0 +1,1 @@
+Select Count(*)[Преподавателей] from Teacher

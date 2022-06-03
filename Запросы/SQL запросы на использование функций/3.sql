@@ -1,0 +1,1 @@
+Select Concat(UPPER(Surname),' ', LOWER([Name]),' ', Upper([Midname]))[ิศฮ] From Pupil

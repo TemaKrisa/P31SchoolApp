@@ -1,0 +1,1 @@
+Select ClassID[Класс], Count(*)[Количество] From Pupil Group By ClassID

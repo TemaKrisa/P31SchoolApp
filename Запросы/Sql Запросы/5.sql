@@ -1,0 +1,1 @@
+Select Distinct p.Surname[Фамилия], p.[Name],p.Midname[Отчество] From Grade g Right join Pupil p on g.PupilID = p.PupilID Where SubjectID = 1

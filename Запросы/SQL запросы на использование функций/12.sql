@@ -1,0 +1,1 @@
+  Update Class Set ClassName = '4Ç' Where ClassName = '3Ç'

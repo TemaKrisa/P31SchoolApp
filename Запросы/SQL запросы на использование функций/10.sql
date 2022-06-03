@@ -1,0 +1,1 @@
+Insert into Class(ClassName,TeacherID) values ('3Ç',3)

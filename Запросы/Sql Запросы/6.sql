@@ -1,0 +1,2 @@
+Select Concat(Surname ,' ', [Name], ' ', Midname) as 'ФИО', Grade[Оценка], SubjectName[Предмет] From Grade g join Subject s on s.SubjectID = g.SubjectID join Pupil p on p.PupilID = g.PupilID  Where Grade between 4 and 5
+Select ClassName[Класс] from Class where SUBSTRING(ClassName,1,1) between 1 and 2

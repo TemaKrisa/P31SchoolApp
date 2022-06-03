@@ -1,0 +1,1 @@
+Select Concat(Surname, ' ', [Name], ' ', Midname)[‘»Œ], ClassName[ Î‡ÒÒ] from Pupil p join Class c on c.ClassID = p.ClassID Order by Surname

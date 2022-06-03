@@ -1,0 +1,2 @@
+Select Concat(Surname, ' ', [Name], ' ', Midname)[ФИО], ClassName[Класс] from Pupil p join Class c on c.ClassID = p.ClassID
+Select Concat(T.Surname, ' ', t.[Name], ' ', t.MidName)[Преподаватель], ClassroomName[Кабинет] From Teacher t join Classroom cs on t.TeacherID = cs.TeacherID
