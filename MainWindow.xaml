@@ -5,5 +5,5 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:P31School"
          Title="School" Icon="Assets/school.png" MinHeight="700" MinWidth="1100">
-    <Frame Source="View/MainPage.xaml" NavigationUIVisibility="Hidden"/>
+    <Frame Source="View/Authorization/LoginPage.xaml" NavigationUIVisibility="Hidden"/>
 </Window>
