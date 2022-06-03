@@ -1,0 +1,21 @@
+﻿<Page x:Class="P31School.View.Profile.ProfilePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:P31School.View.Profile"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="941"
+      Title="ProfilePage">
+
+    <Grid>
+        <TextBlock Text="Моя учётная запись" Margin="10" FontSize="35" FontWeight="UltraBlack" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+        <TextBlock Text="Логин" Margin="10,62,0,0" FontSize="24" FontWeight="Black" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <TextBlock Name="LoginLabl" Text="User" Margin="10,99,0,0" FontSize="18" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <Button Name="LogChangeB" Style="{DynamicResource Rb}" VerticalAlignment="Top" HorizontalAlignment="Right" Height="40" Width="352" Margin="10,69" Background="{DynamicResource PrimaryBlueColor}" Foreground="White" Content="Изменить" FontSize="48" FontWeight="UltraBlack" Click="LogChangeB_Click"/>
+        <TextBlock Text="Пароль" Margin="10,128,0,0" FontSize="24" FontWeight="Black" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <Button Name="PasChangeB" Style="{DynamicResource Rb}" VerticalAlignment="Top" HorizontalAlignment="Left" Height="40" Width="352" Margin="10,165,0,0" Background="{DynamicResource PrimaryBlueColor}" Foreground="White" Content="Изменить пароль" FontSize="48" FontWeight="UltraBlack" Click="PasChangeB_Click"/>
+        <local:PasswordChange x:Name="PasChangeDialog" Visibility="Collapsed"/>
+        <local:LoginChange x:Name="LogChangeDialog" Visibility="Collapsed" IsVisibleChanged="LogChangeDialog_IsVisibleChanged"/>
+    </Grid>
+</Page>

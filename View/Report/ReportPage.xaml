@@ -1,0 +1,27 @@
+﻿<Page x:Class="P31School.View.ReportPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:P31School.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ReportPage">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="51"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <!--<ScrollViewer Background="Blue" VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Visible">-->
+        <TabControl x:Name="Tabs" BorderThickness="0" SelectionChanged="TabControl_SelectionChanged">
+            <TabItem Header="Классы" />
+            <TabItem Header="Предметы" />
+            <TabItem Header="Ученики" />
+            <TabItem Header="Преподаватели" />
+            <TabItem Header="Оценки" />
+            <TabItem Header="Общий"/>
+        </TabControl>
+        <!--</ScrollViewer>-->
+        <Frame x:Name="ReportFrame" Grid.Row="1"/>
+    </Grid>
+</Page>

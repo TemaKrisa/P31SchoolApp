@@ -1,0 +1,45 @@
+﻿<Page x:Class="P31School.View.Authorization.LoginPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:P31School.View.Authorization" 
+      mc:Ignorable="d" Loaded="Page_Loaded" >
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="81*"/>
+            <ColumnDefinition Width="479"/>
+            <ColumnDefinition Width="81*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="55*"/>
+            <RowDefinition Height="442"/>
+            <RowDefinition Height="55*"/>
+        </Grid.RowDefinitions>
+        <Rectangle Grid.RowSpan="3" Grid.ColumnSpan="3">
+            <Rectangle.Fill>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#FF0E73CB" Offset="0.5" />
+                    <GradientStop Color="#FF3D9BD7" Offset="0.75" />
+                    <GradientStop Color="#FF6EBFE4" Offset="0.95" />
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Border Grid.Row="1" Grid.Column="1" CornerRadius="10">
+            <Border.Effect>
+                <DropShadowEffect/>
+            </Border.Effect>
+        </Border>
+        <Border Background="{DynamicResource PrimaryBackgroundColor}" Grid.Row="1" Grid.Column="1" CornerRadius="10">
+            <Grid>
+                <TextBlock Text="{Binding Time, UpdateSourceTrigger=PropertyChanged,Mode=OneWay}" FontWeight="Black" Foreground="{DynamicResource TextPrimaryColor}" FontSize="30" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,40,0,0"/>
+                <TextBlock Text="Логин" VerticalAlignment="Center" Foreground="{DynamicResource TextPrimaryColor}" Margin="32,68,32,277" FontSize="20" FontWeight="Medium"/>
+                <TextBox  x:Name="LoginBox" Margin="32,134,32,266" FontSize="20" VerticalContentAlignment="Center" Tag="Логин" Height="42"/>
+                <TextBlock Text="Пароль" VerticalAlignment="Top" Foreground="{DynamicResource TextPrimaryColor}" Margin="32,200,32,0" FontSize="20" FontWeight="Medium"/>
+                <PasswordBox x:Name="Passwords" Background="{DynamicResource SecundaryBackgroundColor}"  FontSize="20"  VerticalContentAlignment="Center" Margin="32,229,32,171"/>
+                <Button x:Name="LoginButton" Height="44" Content="Вход" Background="#FF5865F2" Foreground="White" BorderThickness="0" FontSize="20" Margin="32,332,32,66" Click="LoginButton_Click" Style="{StaticResource Rb}" FontWeight="UltraBlack"/>
+            </Grid>
+        </Border>
+        <local:CaptchChecker Grid.ColumnSpan="3" Grid.RowSpan="3" Visibility="Collapsed" x:Name="CaptchCheckDialog" IsVisibleChanged="CaptchCheckDialog_IsVisibleChanged"/>
+    </Grid>
+</Page>

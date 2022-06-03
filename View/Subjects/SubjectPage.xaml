@@ -1,0 +1,64 @@
+﻿<Page x:Class="P31School.View.Subjects.SubjectPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:P31School.View.Subjects"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="SubjectPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="43"/>
+            <RowDefinition/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <ListView Name="SubjectTable" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Grid.Row="1" BorderThickness="0">
+            <ListView.Resources>
+                <Style TargetType="ListViewItem">
+                    <Style.Triggers>
+                        <Trigger Property="IsKeyboardFocusWithin" Value="True">
+                            <Setter Property="IsSelected" Value="True"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </ListView.Resources>
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel Orientation="Horizontal"  />
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderThickness="1" BorderBrush="Black" Width="Auto" CornerRadius="6">
+                        <Grid>
+                            <StackPanel Orientation="Vertical">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock FontSize="24" Text="  "/>
+                                    <TextBlock Text="{Binding SubjectName}" FontSize="24" Padding="15,0,0,0"/>
+                                    <TextBlock FontSize="24" Text="  "/>
+                                </StackPanel>
+                                <Grid Height="33" Margin="0,5,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Button Name="SubjectChange" Content="Изменить" Style="{DynamicResource Rb}" Click="ChangeB_Click"/>
+                                    <Button Name="SubjectDelete" Content="Удалить" Style="{DynamicResource Rb}" Grid.Column="1" Background="Red" Foreground="White" Click="DeleteB_Click"/>
+                                </Grid>
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <TextBox x:Name="SubjectSearch" Margin="5" Grid.ColumnSpan="3" Tag="Поиск..."  TextChanged="SubjectSearch_TextChanged"/>
+        <Button x:Name="AddB" Style="{DynamicResource Menu}" Grid.Row="2" Grid.Column="2" Content="Добавить" Foreground="White" FontWeight="UltraBlack" Background="{DynamicResource PrimaryBlueColor}" Click="AddB_Click"/>
+        <local:SubjectAdd x:Name="SubAdd" Grid.RowSpan="5" Grid.ColumnSpan="5" Visibility="Collapsed" IsVisibleChanged="SubAdd_IsVisibleChanged"/>
+        <local:SubjectChange x:Name="SubChange" Grid.RowSpan="5" Grid.ColumnSpan="5" Visibility="Collapsed" IsVisibleChanged="SubChange_IsVisibleChanged"/>
+    </Grid>
+</Page>

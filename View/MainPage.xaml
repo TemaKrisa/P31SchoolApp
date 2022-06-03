@@ -1,0 +1,46 @@
+﻿<Page x:Class="P31School.View.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" MinHeight="600" MinWidth="1000">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid HorizontalAlignment="Left" x:Name="gridMenu" Width="59" Background="{DynamicResource PrimaryBackgroundColor}">
+            <StackPanel Margin="0,0,0,40">
+                <ToggleButton x:Name="btnMenu"  HorizontalAlignment="Left" BorderThickness="0" Background="Transparent" VerticalAlignment="Center" Style="{StaticResource MenuIconStyle}" Margin="15 0 0 0">
+                    <ToggleButton.Triggers>
+                        <EventTrigger RoutedEvent="ToggleButton.Unchecked">
+                            <BeginStoryboard>
+                                <Storyboard x:Name="HideStackPanel">
+                                    <DoubleAnimation Storyboard.TargetName="gridMenu" Storyboard.TargetProperty="Width" BeginTime="0:0:0" From="200" To="59" Duration="0:0:0.3"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="ToggleButton.Checked">
+                            <BeginStoryboard>
+                                <Storyboard x:Name="ShowStackPanel">
+                                    <DoubleAnimation Storyboard.TargetName="gridMenu" Storyboard.TargetProperty="Width" BeginTime="0:0:0" From="60" To="250" Duration="0:0:0.3"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </ToggleButton.Triggers>
+                </ToggleButton>
+                <RadioButton x:Name="ClassButton"     IsChecked="False"  Style="{DynamicResource MenuRadioButtonStyle}"  Tag="{DynamicResource Ye }"       Content="Классы"        Checked="ClassButton_Checked"     />
+                <RadioButton x:Name="TeacherButton"   IsChecked="False"  Style="{DynamicResource MenuRadioButtonStyle}"  Tag="{DynamicResource Teacher}"   Content="Преподаватели" Checked="TeacherButton_Checked"/>
+                <RadioButton x:Name="ScheduleButton"  IsChecked="False"  Style="{DynamicResource MenuRadioButtonStyle}"  Tag="{DynamicResource Schedule}"  Content="Расписание"    Checked="ScheduleButton_Checked"/>
+                <RadioButton x:Name="SubjectButton"   IsChecked="False"  Style="{DynamicResource MenuRadioButtonStyle}"  Tag="{DynamicResource Subject}"   Content="Предметы"      Checked="SubjectButton_Checked"/>
+                <RadioButton x:Name="ClassroomButton" IsChecked="False"  Style="{DynamicResource MenuRadioButtonStyle}"  Tag="{DynamicResource ClassRoom}" Content="Кабинеты"      Checked="ClassroomButton_Checked"/>
+                <RadioButton x:Name="GraphicsButton"  IsChecked="False"  Style="{DynamicResource MenuRadioButtonStyle}"  Tag="{DynamicResource Graph}"     Content="Графики"       Checked="GraphicsButton_Checked"/>
+                <RadioButton x:Name="ReportButton"    IsChecked="False"  Style="{DynamicResource MenuRadioButtonStyle}"  Tag="{DynamicResource Report}"    Content="Отчёты"        Checked="ReportButton_Checked"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" VerticalAlignment="Bottom">
+                <RadioButton Content="Профиль" x:Name="ProfileButton" IsChecked="False" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource Accounts}" Checked="ProfileButton_Checked"   />
+                <RadioButton Content="О программе" x:Name="AboutProgram" IsChecked="False"  Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource Info}"  Checked="AboutProgram_Checked"   />
+            </StackPanel>
+        </Grid>
+        <Frame x:Name="MainFrm" Grid.Column="1"  NavigationUIVisibility="Hidden"/>
+    </Grid>
+</Page>

@@ -1,0 +1,31 @@
+﻿<Page x:Class="P31School.View.Report.SubjectReport"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:P31School.View.Report"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="SubjectReport">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="43"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="49*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <DataGrid x:Name="ReportSubject" Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="2">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Предмет"        Binding="{Binding SubjectName}"/>
+                <DataGridTextColumn Header="Количество преподавателей" Width="*"  Binding="{Binding Count}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBox x:Name="SearchBox" Margin="5" Grid.ColumnSpan="2" Tag="Поиск..." TextChanged="ClassSearch_TextChanged"/>
+        <Button x:Name="ClassToExcel" Grid.Row="3" Style="{DynamicResource Menu}" Content="Excel" FontWeight="UltraBlack" FontSize="100" Foreground="White" Background="#FF217346" Click="ClassToExcel_Click"/>
+        <Button x:Name="ClassToWord"  Grid.Row="3" Grid.Column="1" Style="{DynamicResource  Menu}" Content="Word" FontWeight="UltraBlack" FontSize="100" Foreground="White" Background="#FF2B579A" Click="ClassToWord_Click"/>
+    </Grid>
+</Page>

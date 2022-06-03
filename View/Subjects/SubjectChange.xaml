@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="P31School.View.Subjects.SubjectChange"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:P31School.View.Subjects">
+    <Grid Background="{x:Null}">
+        <Grid  Background="#7f000000" IsVisibleChanged="Grid_IsVisibleChanged" MouseDown="Grid_MouseDown"/>
+        <Border BorderBrush="Blue" CornerRadius="6" Background="{DynamicResource PrimaryBackgroundColor}"  BorderThickness="3" Width="460" Height="220">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Изменение предмета" FontSize="30" FontWeight="UltraBlack" HorizontalAlignment="Center" Margin="25" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+                <TextBox Name="SubjectNameBox" Tag="Наименование" Margin="10,80" VerticalAlignment="Top" Height="50" FontSize="24" Grid.ColumnSpan="2"/>
+                <Button Name="ChangeB" Style="{StaticResource Rb}" Height="50" VerticalAlignment="Bottom" Margin="10,20" Content="Изменить" Grid.Column="1" FontSize="48" Click="ChangeB_Click"/>
+                <Button Name="DeleteB" Style="{StaticResource Rb}" Height="50" VerticalAlignment="Bottom" Margin="10,20" Content="Удалить" Grid.Column="0" Background="Red" FontSize="48" Click="DeleteB_Click"/>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>
